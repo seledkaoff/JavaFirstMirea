@@ -1,5 +1,6 @@
 package ru.mirea.task1.opt4;
 import java.util.Scanner;
+
 public class ShowArgs {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -24,7 +25,18 @@ public class ShowArgs {
             sumSecond += digits[j];
             j++;
         } while(j < len);
+        int min = digits[0];
+        int max = digits[0];
 
-        System.out.printf("sum1 = %d, sum2 = %d, равны = %b", sumFirst, sumSecond, sumFirst = sumSecond);
+        for (int k = 1; k < len; k++) {
+            if (digits[k] < min) {
+                min = digits[k];
+            }
+            if (digits[k] > max) {
+                max = digits[k];
+            }
+        }
+        System.out.printf("sum1 = %d, sum2 = %d, равны = %b\n", sumFirst, sumSecond, sumFirst = sumSecond);
+        System.out.printf("min = %d, max = %d", min, max);
     }
 }
